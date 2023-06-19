@@ -4,5 +4,5 @@ attributes and methods of an objects"""
 
 
 def lookup(obj):
-	"""function that returns the list"""
-	return(dir(obj))
+    """function that returns the list"""
+    return dir(obj)
