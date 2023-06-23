@@ -4,20 +4,19 @@ and then save them to a file"""
 import sys
 
 
-save_to_json_file = __import__('5-save_to_json_file.py').save_to_json_file
-load_from_json_file = \
-	__import__('6-load_from_json_file.py').load_from_json_file
+save = __import__('5-save_to_json_file.py').save_to_json_file
+load = __import__('6-load_from_json_file.py').load_from_json_file
 
 
 def lists(argument):
-	"""add argument"""
+    """add argument"""
     try:
-        value = load_from_json_file("add_item.json")
+        value = load("add_item.json")
     except FileNotFoundError:
         value = []
 
     value += argument
-    save_to_json_file(value, "add_item.json")
+    save(value, "add_item.json")
 
 
 argument = sys.argv[1:]
