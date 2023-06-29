@@ -27,30 +27,26 @@ class Square(Rectangle):
             for arg in args:
                 if a == 0:
                     if arg is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
+                        self.__init__(self.size, self.x, self.y)
                     else:
                         self.id = arg
                 elif a == 1:
-                    self.width = arg
+                    self.size = arg
                 elif a == 2:
-                    self.height = arg
-                elif a == 3:
                     self.x = arg
-                elif a == 4:
+                elif a == 3:
                     self.y = arg
                 a += 1
 
         elif kwargs and len(kwargs) != 0:
             for b, c in kwargs.items():
-                if b == "id":
+                if k == "id":
                     if c is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
+                        self.__init__(self.size, self.x, self.y)
                     else:
                         self.id = c
-                elif b == "width":
-                    self.width = c
-                elif b == "height":
-                    self.height = c
+                elif b == "size":
+                    self.size = c
                 elif b == "x":
                     self.x = c
                 elif b == "y":
