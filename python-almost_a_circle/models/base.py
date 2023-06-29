@@ -47,11 +47,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Return a class instantied from a dictionary of attributes."""
-        if cls.__name__ = "Rectangle":
+        if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
-        elif cls.__name__ = "Square":
+        elif cls.__name__ == "Square":
             dummy = cls(1)
         else:
-            dummy = ()
+            dummy = cls()
+
         dummy.update(**dictionary)
         return dummy
