@@ -27,10 +27,12 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON serialization of a list of objects to a file."""
-        filename = cls.__name__ + "json"
-        with open(filename, "w") as jsonfile:
-            if list_objs is None:
-                jsonfile.write("[]")
-            else:
-                list_dict = [o.to_dictionary() for o in list_objs]
-                jsonfile.write(Base.to_json_string(list_objs))
+        if list_objs is None:
+            list_objs = []
+
+        filename = cls.__name__ + ".json"
+        json_string = cls.to_json_string([obj.to_dictionary()
+                                         for obj in list_objs])
+
+        with open(filename, "w") as file:
+            file.write(json_string)
