@@ -49,7 +49,9 @@ class Base:
         """Return a class instantied from a dictionary of attributes."""
         if cls.__name__ = "Rectangle":
             dummy = cls(1, 1)
-        else:
+        elif cls.__name__ = "Square":
             dummy = cls(1)
+        else:
+            dummy = ()
         dummy.update(**dictionary)
         return dummy
