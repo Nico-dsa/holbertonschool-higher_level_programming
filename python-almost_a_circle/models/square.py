@@ -38,16 +38,5 @@ class Square(Rectangle):
                     self.y = arg
                 a += 1
 
-        elif kwargs and len(kwargs) != 0:
-            for b, c in kwargs.items():
-                if k == "id":
-                    if c is None:
-                        self.__init__(self.size, self.x, self.y)
-                    else:
-                        self.id = c
-                elif b == "size":
-                    self.size = c
-                elif b == "x":
-                    self.x = c
-                elif b == "y":
-                    self.y = c
+        for key, value in kwargs.items():
+            setattr(self, key, value)
