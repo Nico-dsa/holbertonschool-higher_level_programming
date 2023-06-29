@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Define the base of all other classes"""
 
+from json import dumps, loads
+import json
+
 
 class Base:
     """Base model"""
